@@ -1,4 +1,18 @@
-<div>
+<div *ngIf="contacts">
+  <div *ngFor="let contact of contacts" class="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
+    <img src="{{contact.image}}" alt="{{contact.name}}" class="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto">
+    <div class="card-body">
+      <div>
+        <p class="card-title">{{contact.name}}</p>
+        <p class="card-text">{{contact.email}}</p>
+        <p class="card-text">{{contact.phoneNumber}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div>
     <label for="contact-name"></label>
     <input type="text" [(ngModel)]="newContact.name">
 </div>
@@ -13,5 +27,5 @@
 <div>
     <label for="contact-image"></label>
     <input type="text" [(ngModel)]="newContact.image">
-</div>
+</div> -->
 <button (click)="addContact">Submit New Contact</button>
