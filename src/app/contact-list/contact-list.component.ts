@@ -30,11 +30,20 @@ export class ContactListComponent implements OnInit {
     console.log(this.contacts);
   }
 
-  addContact(){
+  addContact(contact:Contact){
     // add contact to contacts list
-
+    const newContact = { ...contact };
+    this.contacts.push(newContact);
 
     // clear inputs
+    this.handleClear();
+  }
+
+  handleClear() {
+    this.newContact.name = "";
+    this.newContact.email = "";
+    this.newContact.phoneNumber = "";
+    this.newContact.image = "";
   }
 
   delete(contact:Contact) {

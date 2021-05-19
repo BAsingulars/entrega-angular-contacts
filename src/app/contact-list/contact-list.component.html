@@ -5,30 +5,29 @@
     <p>{{ contact.email }}</p>
   </section>
 
-  <img src="{{ contact.image }}" alt="{{ contact.name }}" />
+  <img src="{{ contact.image }}" alt="" />
 
-  <button class="delete" title="delete hero" (click)="delete(contact)">
-    x
-  </button>
+  <button class="delete" title="delete contact" (click)="delete(contact)"> x </button>
 </article>
 
+
 <div>
-  <label for="contact-name"></label>
-  <input type="text" [(ngModel)]="newContact.name" />
+  <label for="contact-name">Name </label>
+  <input id="contact-name" placeholder="Jane Doe" type="text" [(ngModel)]="newContact.name" />
 </div>
 <div>
-  <label for="contact-email"></label>
-  <input type="text" [(ngModel)]="newContact.email" />
+  <label for="contact-email"> Email </label>
+  <input id="contact-email" placeholder="e-mail@address.com" type="email" [(ngModel)]="newContact.email" />
 </div>
 
 <div>
-  <label for="contact-phone"></label>
-  <input type="text" [(ngModel)]="newContact.phoneNumber" />
+  <label for="contact-phone"> Phone number </label>
+  <input id="contact-phone" placeholder="123 456 789" type="phone" [(ngModel)]="newContact.phoneNumber" />
 </div>
 
 <div>
-  <label for="contact-image"></label>
-  <input type="text" [(ngModel)]="newContact.image" />
+  <label for="contact-image">Image file</label>
+  <input id="contact-image" placeholder="image.png" type="text" [(ngModel)]="newContact.image" />
 </div>
 
-<button (click)="addContact()">Submit New Contact</button>
+<button (click)="addContact(newContact)">Submit New Contact</button>
