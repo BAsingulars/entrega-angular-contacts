@@ -22,7 +22,6 @@ export class ContactListComponent implements OnInit {
     image: ""
   };
 
-
   constructor() { }
 
   ngOnInit() {
@@ -46,7 +45,5 @@ export class ContactListComponent implements OnInit {
     this.newContact.image = "";
   }
 
-  delete(contact:Contact) {
-    this.contacts = this.contacts.filter(c => c !== contact);
-  }
+  delete(contact:Contact) { this.contacts = this.contacts.filter(c => c !== contact); }
 }
