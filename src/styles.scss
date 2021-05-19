@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+.foto {
+  width: 7vw;
+  height: 7vh;
+  border-radius: 50%;
+  //   border: 2px solid black;
+}
+.contactos:hover {
+  border: 1px solid rgb(146, 145, 145);
+  border-radius: 30px;
+  background-color: rgba(230, 227, 227, 0.445);
+}
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+}
+.tabla {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  margin: 50px;
+  justify-self: center;
+  align-self: center;
+}
+.modales {
+  grid-column: 2;
+  grid-row: 1;
+}

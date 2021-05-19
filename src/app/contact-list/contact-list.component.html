@@ -1,31 +1,123 @@
-<div *ngIf="contacts">
-  <label for="contact-name"></label>
-  <input type="text" [(ngModel)]="newContact.name" />
-</div>
-<div>
-  <label for="contact-email"></label>
-  <input type="text" [(ngModel)]="newContact.email" />
-</div>
-<div>
-  <label for="contact-phone"></label>
-  <input type="text" [(ngModel)]="newContact.phoneNumber" />
-</div>
-<div>
-  <label for="contact-image"></label>
-  <input type="text" [(ngModel)]="newContact.image" />
-</div>
-<button (click)="addContact()">Submit New Contact</button>
-<div>
-  <ul>
-    <li *ngFor="let contacto of contacts">
-      <img src="{{ contacto?.image }}" alt="Foto de Contacto" />
-      <p>
-        {{ contacto?.name }}- {{ contacto?.email }} -
-        {{ contacto?.phoneNumber }}
-      </p>
-      <span (click)="deleteContact(contacto)">
-        <i class="fas fa-trash-alt"></i>
-      </span>
-    </li>
-  </ul>
+<div class="container">
+  <!-- Lista de contactos -->
+  <div class="table-responsive tabla">
+    <table class="table align-items-center table-borderless">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cont of contacts" class="contactos p-2">
+          <th scope="row" class="col-xs">
+            <img src="{{ cont.image }}" alt="" class="foto" />
+          </th>
+          <td class="p-2">{{ cont.name }}</td>
+          <td class="p-2">{{ cont.email }}</td>
+          <td class="p-2">{{ cont.phoneNumber }}</td>
+          <td>
+            <span (click)="deleteContact(contacto)">
+              <i class="fas fa-trash-alt"></i>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="modales">
+    <!-- boton de modal-->
+    <button
+      type="button"
+      class="btn btn-primary me-md-2"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Add Contact
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Contact</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="input-group mb-3">
+              <span class="input-group-text">First and last name</span>
+              <label for="contact-name"></label>
+              <input
+                type="text"
+                aria-label="First name"
+                class="form-control"
+                [(ngModel)]="newContact.name"
+              />
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text">Email</span>
+              <label for="contact-email"></label>
+              <input
+                type="text"
+                aria-label="First name"
+                class="form-control"
+                [(ngModel)]="newContact.email"
+              />
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text">Phone Number</span>
+              <label for="contact-phone"></label>
+              <input
+                type="text"
+                aria-label="First name"
+                class="form-control"
+                [(ngModel)]="newContact.phoneNumber"
+              />
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text">Image </span>
+              <label for="contact-image"></label>
+              <input
+                type="text"
+                aria-label="First name"
+                class="form-control"
+                [(ngModel)]="newContact.image"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="addContact()"
+              data-bs-dismiss="modal"
+            >
+              Submit New Contact
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
