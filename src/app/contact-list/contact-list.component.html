@@ -1,3 +1,14 @@
+<article class="contact-card" *ngFor="let contact of contacts">
+  <section>
+    <p>{{ contact.name }}</p>
+    <p>{{ contact.phoneNumber }}</p>
+    <p>{{ contact.email }}</p>
+  </section>
+
+  <img src="{{ contact.image }}" alt="{{ contact.name }}" />
+</article>
+
+<!-- 
 <div>
     <label for="contact-name"></label>
     <input type="text" [(ngModel)]="newContact.name">
@@ -14,4 +25,4 @@
     <label for="contact-image"></label>
     <input type="text" [(ngModel)]="newContact.image">
 </div>
-<button (click)="addContact">Submit New Contact</button>
+<button (click)="addContact()">Submit New Contact</button> -->

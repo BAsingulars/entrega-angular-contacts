@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import contactList from '../contacts';
 
 interface Contact {
-    name: String;
-    email: String;
-    phoneNumber: String;
-    image: String ;
+  name: String;
+  email: String;
+  phoneNumber: String;
+  image: String ;
 }
 
 @Component({
@@ -21,6 +21,7 @@ export class ContactListComponent implements OnInit {
 
   ngOnInit() {
     this.contacts = contactList;
+    console.log(this.contacts);
   }
 
   addContact(){
