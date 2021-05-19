@@ -31,4 +31,8 @@ export class ContactListComponent implements OnInit {
     // clear inputs
     this.newContact = {};
   }
+  deleteContact(user) {
+    let index = this.contacts.indexOf(user);
+    this.contacts.splice(index, 1);
+  }
 }

@@ -23,6 +23,9 @@
         {{ contacto?.name }}- {{ contacto?.email }} -
         {{ contacto?.phoneNumber }}
       </p>
+      <span (click)="deleteContact(contacto)">
+        <i class="fas fa-trash-alt"></i>
+      </span>
     </li>
   </ul>
 </div>
