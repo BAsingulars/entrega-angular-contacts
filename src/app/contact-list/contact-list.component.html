@@ -1,4 +1,4 @@
-<!-- <div>
+<div *ngIf="contacts">
   <label for="contact-name"></label>
   <input type="text" [(ngModel)]="newContact.name" />
 </div>
@@ -14,15 +14,15 @@
   <label for="contact-image"></label>
   <input type="text" [(ngModel)]="newContact.image" />
 </div>
-<button (click)="(addContact)">Submit New Contact</button>
-<div> -->
-<ul>
-  <li *ngFor="let contacto of contacts">
-    <img src="{{ contacto?.image }}" alt="Foto de Contacto" />
-    <p>
-      {{ contacto?.name }}- {{ contacto?.email }} -
-      {{ contacto?.phoneNumber }}
-    </p>
-  </li>
-</ul>
-<!-- </div> -->
+<button (click)="addContact()">Submit New Contact</button>
+<div>
+  <ul>
+    <li *ngFor="let contacto of contacts">
+      <img src="{{ contacto?.image }}" alt="Foto de Contacto" />
+      <p>
+        {{ contacto?.name }}- {{ contacto?.email }} -
+        {{ contacto?.phoneNumber }}
+      </p>
+    </li>
+  </ul>
+</div>
