@@ -1,0 +1,18 @@
+mat-card {
+    height: 100%;
+    width: 100%; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+  }
+  
+  .individ{
+    border: 2px solid black;    
+    box-shadow: 5px 5px 10px #8f8f8f;
+    margin: 10%;
+  }
+
+  img {
+    width: 200px;
+    height: 200px;
+  }

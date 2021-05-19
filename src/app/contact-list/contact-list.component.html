@@ -1,3 +1,12 @@
+<mat-card>
+    <div class="individ" *ngFor="let contact of contacts">
+        <p> {{ contact.name }} </p>
+        <p> {{ contact.email }} </p>
+        <p> {{ contact.phoneNumber }} </p>
+        <img src="{{ contact.image }}">
+    </div>
+</mat-card>
+<!-- 
 <div>
     <label for="contact-name"></label>
     <input type="text" [(ngModel)]="newContact.name">
@@ -15,3 +24,5 @@
     <input type="text" [(ngModel)]="newContact.image">
 </div>
 <button (click)="addContact">Submit New Contact</button>
+
+ -->
