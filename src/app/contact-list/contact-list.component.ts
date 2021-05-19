@@ -15,7 +15,13 @@ interface Contact {
 })
 export class ContactListComponent implements OnInit {
   contacts: Object[];
-  newContact: Contact;
+  newContact: Contact = {
+    name: "",
+    email: "",
+    phoneNumber: "",
+    image: ""
+  };
+
 
   constructor() { }
 
@@ -26,6 +32,12 @@ export class ContactListComponent implements OnInit {
 
   addContact(){
     // add contact to contacts list
+
+
     // clear inputs
+  }
+
+  delete(contact:Contact) {
+    this.contacts = this.contacts.filter(c => c !== contact);
   }
 }

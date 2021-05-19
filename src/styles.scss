@@ -20,6 +20,7 @@ html { font-size: 16px; }
 body {
   font-family: $helvetica;
   font-size: 1rem;
+  background-color: #f3f4fb;
 }
 
 h1 { font-size: 3rem; }
@@ -33,25 +34,34 @@ a {
 }
 
 .contact-card {
-    display: grid;
-    grid-template-columns: 128px auto;
-    grid-template-rows: auto;
+  display: grid;
+  grid-template-columns: 128px 256px;
+  grid-template-rows: auto;
+  align-items: center;
+  justify-items: center;
 
+  background: white;
+  height: calc(400px / 2);
+  width: calc(256px + 128px + 80px);
+  border-radius: 28px;
 
-    img {
-        width: $contact-image-size;
-        height: $contact-image-size;
-        object-fit: cover;
-        border-radius: 50px;
+  margin: 25px;
+  padding: 25px;
 
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-    }
+  img {
+    width: $contact-image-size;
+    height: $contact-image-size;
+    object-fit: cover;
+    border-radius: 50px;
 
-    section {
-        grid-column: 2 / 3;
-        grid-row: 1 / 2;
-    }
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  section {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
 
 }
 

@@ -1,28 +1,34 @@
 <article class="contact-card" *ngFor="let contact of contacts">
   <section>
-    <p>{{ contact.name }}</p>
+    <h3>{{ contact.name }}</h3>
     <p>{{ contact.phoneNumber }}</p>
     <p>{{ contact.email }}</p>
   </section>
 
   <img src="{{ contact.image }}" alt="{{ contact.name }}" />
+
+  <button class="delete" title="delete hero" (click)="delete(contact)">
+    x
+  </button>
 </article>
 
-<!-- 
 <div>
-    <label for="contact-name"></label>
-    <input type="text" [(ngModel)]="newContact.name">
+  <label for="contact-name"></label>
+  <input type="text" [(ngModel)]="newContact.name" />
 </div>
 <div>
-    <label for="contact-email"></label>
-    <input type="text" [(ngModel)]="newContact.email">
+  <label for="contact-email"></label>
+  <input type="text" [(ngModel)]="newContact.email" />
 </div>
+
 <div>
-    <label for="contact-phone"></label>
-    <input type="text" [(ngModel)]="newContact.phoneNumber">
+  <label for="contact-phone"></label>
+  <input type="text" [(ngModel)]="newContact.phoneNumber" />
 </div>
+
 <div>
-    <label for="contact-image"></label>
-    <input type="text" [(ngModel)]="newContact.image">
+  <label for="contact-image"></label>
+  <input type="text" [(ngModel)]="newContact.image" />
 </div>
-<button (click)="addContact()">Submit New Contact</button> -->
+
+<button (click)="addContact()">Submit New Contact</button>
