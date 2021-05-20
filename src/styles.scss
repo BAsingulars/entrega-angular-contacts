@@ -16,9 +16,12 @@
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
+  overflow: scroll;
 }
 .tabla {
-  width: 50vw;
+  // width: 60vw;
+  height: 500px;
+  grid-row: 2;
   margin: 80px;
   justify-self: center;
 }
@@ -28,6 +31,10 @@
   margin: 30px;
   width: 200px;
   justify-self: center;
+}
+.favortios {
+  grid-column: 1;
+  grid-row: 1;
 }
 #input-form {
   margin-bottom: 5px;
