@@ -17,4 +17,9 @@ export class ContactService {
   addContactToList(newContact:Contact){
     contactList.push(newContact);
   }
+
+  removeContactList(contact:Contact){
+    const index = contactList.indexOf(contact);
+    contactList.splice(index,1);
+  }
 }

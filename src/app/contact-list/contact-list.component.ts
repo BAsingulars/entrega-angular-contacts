@@ -53,4 +53,8 @@ export class ContactListComponent implements OnInit {
     this.newContact = {} as Contact;
   }
 
+  removeContact(contact:Contact){
+    this.contactServ.removeContactList(contact);
+  }
+
 }
