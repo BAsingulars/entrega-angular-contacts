@@ -32,7 +32,7 @@ export class ContactListComponent implements OnInit {
     this.newContact = {};
   }
   deleteContact(user) {
-    console.log(user);
+    // coge el index del usuario
     let index = this.contacts.indexOf(user);
     if (index > -1) {
       this.contacts.splice(index, 1);

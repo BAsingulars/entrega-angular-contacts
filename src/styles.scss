@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-html {
-  font-family: sans-serif;
-}
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 .foto {
   width: 7vw;
   height: 7vh;
@@ -9,9 +10,7 @@ html {
   //   border: 2px solid black;
 }
 .contactos:hover {
-  border: 1px solid rgb(146, 145, 145);
-  border-radius: 30px;
-  background-color: rgba(230, 227, 227, 0.445);
+  border-radius: 50rem;
 }
 .container {
   display: grid;
@@ -19,13 +18,21 @@ html {
   grid-template-rows: auto auto;
 }
 .tabla {
-  grid-column: 1 / span 2;
-  grid-row: 2;
-  margin: 50px;
+  width: 50vw;
+  margin: 80px;
   justify-self: center;
-  align-self: center;
 }
 .modales {
   grid-column: 2;
   grid-row: 1;
+  margin: 30px;
+  width: 200px;
+  justify-self: center;
+}
+#input-form {
+  margin-bottom: 5px;
+}
+body {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
