@@ -1,33 +1,48 @@
-<article class="contact-card" *ngFor="let contact of contacts">
-  <section>
-    <h3>{{ contact.name }}</h3>
-    <p>{{ contact.phoneNumber }}</p>
-    <p>{{ contact.email }}</p>
-  </section>
+<h3>Favorites</h3>
+<div class="contact faves">
+  <article class="favorite-card" *ngFor="let favorite of favorites">
+    <section>
+      <h3>{{ favorite.name }}</h3>
+      <p>{{ favorite.phoneNumber }}</p>
+      <p class="line-clamp">{{ favorite.email }}</p>
+    </section>
+  
+    <img src="{{ favorite.image }}" alt="" />
+  
+    <div class="buttons">
+      <button class="fave-button side-bg button-round"><i class="fas fa-star"></i></button>
+    </div>
+  </article>      
+</div>
 
-  <img src="{{ contact.image }}" alt="" />
+<h3>Contact List</h3>
+<div class="contact list">
+  <article class="contact-card" *ngFor="let contact of contacts">
+    <section>
+      <h3>{{ contact.name }}</h3>
+      <p>{{ contact.phoneNumber }}</p>
+      <p class="line-clamp">{{ contact.email }}</p>
+    </section>
+  
+    <img src="{{ contact.image }}" alt="" />
+  
+    <div class="buttons">
+      <button class="fave-button accent-bg button-round"><i class="far fa-star"></i></button>
+      <button class="delete accent-bg button-round" title="delete contact" (click)="delete(contact)"> ✕ </button>
+    </div>
+  </article>      
+</div>
 
-  <button class="delete" title="delete contact" (click)="delete(contact)"> x </button>
-</article>
-
-
-<div>
+<!-- <button class="accent-bg-line big-button">+</button>
+<div class="form">
+  <h2>New contact</h2>
   <label for="contact-name">Name </label>
   <input id="contact-name" placeholder="Jane Doe" type="text" [(ngModel)]="newContact.name" />
-</div>
-<div>
   <label for="contact-email"> Email </label>
   <input id="contact-email" placeholder="e-mail@address.com" type="email" [(ngModel)]="newContact.email" />
-</div>
-
-<div>
   <label for="contact-phone"> Phone number </label>
   <input id="contact-phone" placeholder="123 456 789" type="phone" [(ngModel)]="newContact.phoneNumber" />
-</div>
-
-<div>
   <label for="contact-image">Image file</label>
   <input id="contact-image" placeholder="image.png" type="text" [(ngModel)]="newContact.image" />
-</div>
-
-<button (click)="addContact(newContact)">Submit New Contact</button>
+  <button class="side-bg" (click)="addContact(newContact)">Submit New Contact</button>
+</div> -->

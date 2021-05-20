@@ -1,0 +1,43 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
+
+/********************* variables *********************/
+/* colors */
+$accent-color: #5860bf;
+$side-color:  #efa0b8;
+$black: #202020;
+$white: white;
+$light-gray: #ddd;
+$bg-color: #f3f4fb;
+$bg-main: #f8fafb;
+
+/* utlities */
+$box-shadow: 0 5px 10px $light-gray;
+$border: 1px solid $accent-color;
+$contact-image-size: 60px;
+$button-size: calc(60px / 2);
+$button-size-l: 60px;
+$nav-width: 60px;
+$fave-card-height: 128px;
+
+/* fonts */
+$helvetica: Helvetica, sans-serif;
+$font: 'Quicksand', sans-serif;
+$spartan: 'Spartan', sans-serif;
+$quicksand: 'Quicksand', sans-serif;
+
+@mixin grid-center {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+@mixin flex-center($direction) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: $direction;
+}

@@ -1,0 +1,90 @@
+@use "../../variables" as *;
+
+.contact-card {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: $contact-image-size 200px $button-size;
+    grid-gap: .5rem;
+
+    &:hover, &:active {
+        background: $side-color;
+        color: $white;
+
+        h3 { color: $white; }
+    }
+}
+
+.favorite-card {
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-template-columns: $contact-image-size 180px $button-size;
+    grid-gap: .5rem;
+
+    background: $white;
+    border-radius: 28px;
+
+    padding: 1rem;
+    height: $fave-card-height;
+
+    grid-row: 1 / 2;
+}
+
+.contact {
+    width: clamp(238px, calc(100vw - 420px), calc(100vw - 300px));
+
+    h3 { 
+        font-size: 1rem; 
+        line-height: 1rem;
+        margin: 5px 0; 
+    }
+
+    p { 
+        font-size: 0.75rem; 
+        line-height: 1.25rem;
+        margin: 0;
+    }
+
+    img {
+        width: $contact-image-size;
+        height: $contact-image-size;
+        object-fit: cover;
+        border-radius: 3rem;
+
+        grid-row: 1 / 2;
+    }
+
+    section { grid-column: 2 / 3; }
+    
+    div { 
+        justify-self: self-end;
+        grid-column: 3 / 4;
+        @include flex-center(column);
+    }
+}
+
+.list { 
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    height: 325px;
+}
+
+.faves {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: auto;
+    grid-gap: 0 15px;
+
+    height: $fave-card-height;
+
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.line-clamp {
+    line-clamp: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

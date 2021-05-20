@@ -1,69 +1,102 @@
-/********************* variables *********************/
-/* colors */
-$accent-color: #efa0b8;
-$side-color: #2531b6;
-$black: #202020;
-$light-gray: #ddd;
+@use "./variables" as v;
 
-/* utlities */
-$box-shadow: 0 5px 10px $light-gray;
-$border: 1px solid $accent-color;
-$contact-image-size: 90px;
-
-/* fonts */
-$helvetica: Helvetica, sans-serif;
-
-
-* {  box-sizing: border-box; }
+* { box-sizing: border-box; }
 html { font-size: 16px; }
 
 body {
-  font-family: $helvetica;
+  font-family: v.$font;
   font-size: 1rem;
-  background-color: #f3f4fb;
+  font-weight: 300;
+  background-color: v.$bg-color;
 }
 
-h1 { font-size: 3rem; }
+.bg {
+  width: clamp(320px, calc(100vw - calc(170px * 2)), calc(100vw - calc(170px * 2)));
+  margin: 0 auto;
+  border-radius: 42px;
+  background: v.$bg-main;
+
+  display: grid;
+  grid-template-columns: v.$nav-width calc(100vw - 90px);
+  grid-gap: 10px;
+
+  nav { grid-row: 1 / 2; }
+  div { grid-column: 2 / 3; }
+}
+
+nav {
+  width: v.$nav-width;
+  height: 100%;
+  border-radius: 2.5rem 0 0 2.5rem;
+  background: v.$white;
+
+  @include v.flex-center(column);
+
+  a { margin: 25px; }
+}
+
+h1 { font-size: 2.5rem; }
 h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+h1, h2, h3 { 
+  color: v.$accent-color;
+  line-height: 1rem;
+  font-weight: 600;
+}
 
 a {
-  color: $accent-color;
+  color: v.$accent-color;
   text-decoration: none;
 
-  &:hover { color: $side-color; }
+  &:hover {
+    color: v.$side-color;
+  }
 }
 
-.contact-card {
-  display: grid;
-  grid-template-columns: 128px 256px;
-  grid-template-rows: auto;
-  align-items: center;
-  justify-items: center;
+button {
+  border: none;
+  margin: 5px;
+  padding: 5px;
 
-  background: white;
-  height: calc(400px / 2);
-  width: calc(256px + 128px + 80px);
-  border-radius: 28px;
-
-  margin: 25px;
-  padding: 25px;
-
-  img {
-    width: $contact-image-size;
-    height: $contact-image-size;
-    object-fit: cover;
-    border-radius: 50px;
-
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+  &:active {
+    color: v.$side-color;
   }
-
-  section {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-  }
-
 }
+
+.big-button {
+  font-size: 2rem;
+  border-radius: 30px;
+  width: v.$button-size-l;
+  height: v.$button-size-l;
+}
+
+.button-round {
+  border-radius: 25px;
+  width: v.$button-size;
+  height: v.$button-size;
+}
+
+.accent-bg {
+  color: v.$white;
+  background: v.$accent-color;
+}
+
+.accent-bg-line {
+  color: v.$accent-color;
+  background: transparent;
+  border: 2px solid v.$accent-color;
+
+  &:active {
+    border: 2px solid v.$side-color;
+  }
+}
+
+.side-bg {
+  color: v.$white;
+  background: v.$side-color;
+}
+
 
 /****** media queries (mobile first) ******/
 /* Small devices (landscape phones, 576px and up) */
