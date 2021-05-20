@@ -23,6 +23,7 @@ export class ContactListComponent implements OnInit {
     phoneNumber: '',
     image: ''
   };
+  showModal = false;
 
   constructor(private contactServ:ContactService) { }
 
@@ -41,7 +42,7 @@ export class ContactListComponent implements OnInit {
       name: this.newContact.name,
       email: this.newContact.email,
       phoneNumber: this.newContact.phoneNumber,
-      image: this.newContact.image
+      image: 'https://i.pinimg.com/originals/0e/d7/f0/0ed7f05c522b12e7b29efbe7887307dc.png'
     };
     this.contactServ.addContactToList(contactoNuevo);
     console.log(this.contacts);
@@ -55,6 +56,15 @@ export class ContactListComponent implements OnInit {
 
   removeContact(contact:Contact){
     this.contactServ.removeContactList(contact);
+  }
+
+  favContact(contact:Contact){
+    this.contactServ.addFav(contact);
+    console.log(this.contacts);
+  }
+
+  toggleModal(){
+    this.showModal = !this.showModal;
   }
 
 }

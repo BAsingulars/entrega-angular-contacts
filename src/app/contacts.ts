@@ -12,12 +12,13 @@ let contacts: Contact[] = [
     name: "Green Crist",
     email: "Rosendo53@hotmail.com",
     phoneNumber: "1-522-714-2638 x44811",
-    image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    isFav: true
   },
 
   {
     name: "Yvette Dickinson",
-    email: "Yolanda.Abernathy@hotmail.com",
+    email: "dickinson@hotmail.com",
     phoneNumber: "(038) 030-9641 x7086",
     image: "https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
   },
@@ -33,14 +34,16 @@ let contacts: Contact[] = [
     name: "Mrs. Otha Beahan",
     email: "Brice46@yahoo.com",
     phoneNumber: "005-851-7095 x72027",
-    image: "https://images.unsplash.com/photo-1605087880595-8cc6db61f3c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+    image: "https://images.unsplash.com/photo-1605087880595-8cc6db61f3c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
+    isFav: true
   },
 
   {
     name: "Ignacio Larson",
-    email: "Remington.Boyer63@yahoo.com",
+    email: "ignacio@yahoo.com",
     phoneNumber: "1-471-836-5871 x5841",
-    image: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+    image: "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
+    isFav: true
   },
 
   {
@@ -61,21 +64,24 @@ let contacts: Contact[] = [
     name: "Reginald Kessler",
     email: "Retta.Wolf@gmail.com",
     phoneNumber: "070-610-2661",
-    image: "https://images.unsplash.com/photo-1611433216945-3e59dc2de4e0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    image: "https://images.unsplash.com/photo-1611433216945-3e59dc2de4e0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    isFav: true
   },
 
   {
     name: "Rosina Schiller",
     email: "Rachelle13@hotmail.com",
     phoneNumber: "869.014.6216 x103",
-    image: "https://images.unsplash.com/photo-1590616023780-dfff93062e98?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    image: "https://images.unsplash.com/photo-1590616023780-dfff93062e98?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    isFav: true
   },
 
   {
-    name: "Annabell Kreiger DVM",
-    email: "Kamron_Kilback24@gmail.com",
+    name: "Annabell Kreiger",
+    email: "annabell@gmail.com",
     phoneNumber: "537.485.6536",
-    image: "https://images.unsplash.com/photo-1559563526-cff7656d1ae6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=449&q=80"
+    image: "https://images.unsplash.com/photo-1484186139897-d5fc6b908812?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    isFav: true
   }
 ]
 

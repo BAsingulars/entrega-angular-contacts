@@ -3,4 +3,5 @@ export interface Contact {
   email: String;
   phoneNumber: String;
   image: String ;
+  isFav?: Boolean;
 }
