@@ -1,4 +1,6 @@
-const contacts: Object[] = [
+import { Contact } from "src/interfaces/contact";
+
+let contacts: Contact[] = [
   {
     name: "Shakira Robel",
     email: "Ashley_Ritchie@hotmail.com",
