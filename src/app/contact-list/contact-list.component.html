@@ -1,13 +1,3 @@
-<mat-card>
-    <div class="individ" *ngFor="let contact of contacts">
-        <p> {{ contact.name }} </p>
-        <p> {{ contact.email }} </p>
-        <p> {{ contact.phoneNumber }} </p>
-        <img src="{{ contact.image }}">
-    </div>
-</mat-card>
-
-
 <div class="register">
     <div>
         <label for="contact-name">Name</label>
@@ -26,4 +16,31 @@
         <input type="text" [(ngModel)]="newContact.image" name="img">
     </div>
     <button (click)="addContact()">Submit New Contact</button>
+</div>
+
+<div class="contacts">
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let contact of contacts">
+            <tr class="individual">
+                <td></td>
+                <td><img src="{{ contact.image }}"></td>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.phoneNumber }}</td>
+                <td>
+                    <mat-icon style="cursor: pointer" (click)="deleteItem(this.contact)">delete</mat-icon>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

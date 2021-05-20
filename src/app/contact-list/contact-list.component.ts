@@ -22,6 +22,8 @@ export class ContactListComponent implements OnInit {
     phoneNumber: '',
     image: ''
   };
+  dataSource;
+  displayedColumns
 
   constructor() { }
 
@@ -38,6 +40,9 @@ export class ContactListComponent implements OnInit {
     this.newContact.email = '';
     this.newContact.phoneNumber = '';
     this.newContact.image = '';
+  }
 
+  deleteItem(contact) {
+    this.contacts.splice(this.contacts.indexOf(contact), 1);
   }
 }

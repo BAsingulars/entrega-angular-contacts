@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+
 
 
 
@@ -20,6 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpModule,
     MatCardModule,
     BrowserAnimationsModule,
+    MatTableModule,
+    MatIconModule
+    
 
 
   ],
