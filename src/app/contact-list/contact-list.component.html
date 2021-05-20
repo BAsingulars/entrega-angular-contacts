@@ -110,20 +110,21 @@
                   </p>
                 </td>
                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                  <span
+                  <button
                     class="
                       relative
                       inline-block
                       px-3
                       py-1
+                      black
                       font-semibold
-                      text-red-900
                       leading-tight
                     "
+                    class="{{ cont.color }}"
                     (click)="favorite(cont)"
                   >
                     <span class="fab fa-gratipay relative"></span>
-                  </span>
+                  </button>
                 </td>
                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                   <span
@@ -412,7 +413,7 @@
   </div>
   <!-- Modal -->
   <div class="flex -space-x-2 justify-center p-3">
-    <a href="#" class="">
+    <a href="#" class="" *ngFor="let fav of contactFavorite">
       <img
         class="
           inline-block
@@ -422,50 +423,8 @@
           object-cover
           ring-2 ring-white
         "
-        src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YXZhdGFyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-        alt="Guy"
-      />
-    </a>
-    <a href="" class="">
-      <img
-        class="
-          inline-block
-          h-16
-          w-16
-          rounded-full
-          object-cover
-          ring-2 ring-white
-        "
-        src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YXZhdGFyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-        alt="Max"
-      />
-    </a>
-    <a href="#" class="">
-      <img
-        class="
-          inline-block
-          h-16
-          w-16
-          rounded-full
-          object-cover
-          ring-2 ring-white
-        "
-        src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YXZhdGFyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-        alt="Charles"
-      />
-    </a>
-    <a href="#" class="">
-      <img
-        class="
-          inline-block
-          h-16
-          w-16
-          rounded-full
-          object-cover
-          ring-2 ring-white
-        "
-        src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YXZhdGFyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-        alt="Jade"
+        src="{{ fav.image }}"
+        alt="{{ fav.name }}"
       />
     </a>
   </div>

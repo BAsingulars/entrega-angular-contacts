@@ -6,6 +6,7 @@ interface Contact {
   email?: String;
   phoneNumber?: String;
   image?: String;
+  color?: String;
 }
 
 @Component({
@@ -17,6 +18,8 @@ export class ContactListComponent implements OnInit {
   contacts: Object[];
   newContact: Contact;
   contactFavorite = [];
+
+  color: string;
 
   constructor() {
     this.newContact = {};
@@ -40,11 +43,15 @@ export class ContactListComponent implements OnInit {
     }
   }
   favorite(contact) {
-    if (!this.contactFavorite.includes(contact.email)) {
+    if (!this.contactFavorite.includes(contact)) {
       this.contactFavorite.push(contact);
+      console.log('fav');
+      contact.color = 'rojo';
     } else {
-      const index = this.contactFavorite.indexOf(contact.email);
+      const index = this.contactFavorite.indexOf(contact);
       this.contactFavorite.splice(index, 1);
+      console.log('no mas fav');
+      contact.color = 'negro';
     }
   }
 }
