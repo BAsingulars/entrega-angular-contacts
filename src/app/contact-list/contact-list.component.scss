@@ -1,8 +1,18 @@
 @use "../../variables" as *;
 
+.round-img {
+    width: $contact-image-size;
+    height: $contact-image-size;
+    object-fit: cover;
+    border-radius: 3rem;
+    
+    grid-row: 1 / 2;
+}
+
 .contact-card {
     display: grid;
     justify-content: space-between;
+    align-items: center;
     grid-template-columns: $contact-image-size 200px $button-size;
     grid-gap: .5rem;
 
@@ -44,16 +54,6 @@
         line-height: 1.25rem;
         margin: 0;
     }
-
-    img {
-        width: $contact-image-size;
-        height: $contact-image-size;
-        object-fit: cover;
-        border-radius: 3rem;
-
-        grid-row: 1 / 2;
-    }
-
     section { grid-column: 2 / 3; }
     
     div { 
@@ -68,6 +68,8 @@
     overflow-x: hidden;
 
     height: 325px;
+
+    .round-img { margin: 10px; }
 }
 
 .faves {
