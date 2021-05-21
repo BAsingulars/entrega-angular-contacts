@@ -16,11 +16,11 @@
     grid-template-columns: $contact-image-size 200px $button-size;
     grid-gap: .5rem;
 
-    &:hover, &:active {
-        background: $side-color;
-        color: $white;
+    border-radius: 28px;
+    padding: 0 25px;
 
-        h3 { color: $white; }
+    &:hover, &:active {
+        background: rgba($side-color, 25%);
     }
 }
 
@@ -41,7 +41,7 @@
 }
 
 .contact {
-    width: clamp(238px, calc(100vw - 420px), calc(100vw - 300px));
+    width: 100%;
 
     h3 { 
         font-size: 1rem; 
@@ -68,8 +68,6 @@
     overflow-x: hidden;
 
     height: 325px;
-
-    .round-img { margin: 10px; }
 }
 
 .faves {

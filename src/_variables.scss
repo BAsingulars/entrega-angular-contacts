@@ -4,10 +4,10 @@
 
 /********************* variables *********************/
 /* colors */
-$accent-color: #5860bf;
-$side-color:  #efa0b8;
+$accent-color: #5962c0;
+$side-color:  #ef9fb7;
 $black: #202020;
-$white: white;
+$white: #ffffff;
 $light-gray: #ddd;
 $bg-color: #f3f4fb;
 $bg-main: #f8fafb;
@@ -40,4 +40,23 @@ $quicksand: 'Quicksand', sans-serif;
     justify-content: center;
 
     flex-direction: $direction;
+}
+
+@mixin accent-color($color, $negative:false) {
+    @if $negative {
+        color: $color;
+        background: $white;
+
+    } @else {
+        color: $white;
+        background: $color;
+    }
+}
+
+@mixin hover-color($color) {
+    &:hover{
+        $color: rgba($color, .25);
+        //soy un putisimo genio ^
+        box-shadow: 0 20px 15px $color;
+    }
 }
