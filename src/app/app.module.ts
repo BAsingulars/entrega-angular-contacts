@@ -5,17 +5,21 @@ import { HttpModule } from '@angular/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
-
-
+import {MatMenuModule} from '@angular/material/menu';
 
 
 import { AppComponent } from './app.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LettersComponent } from './letters/letters.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ContactListComponent
+    ContactListComponent,
+    FavoritesComponent,
+    LettersComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule,
+    NgbModule,
     
 
 

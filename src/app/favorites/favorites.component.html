@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <h2>Favorite</h2>
+    <div class="favos">
+
+        <div *ngFor="let fav of favorites">
+
+            <div class="card">
+                <div class="personFavs">
+                    <div (click)="imageFriend()" class="imgFav"><img src="{{fav.image}}"></div>
+                    <div class="favName"> {{fav.name}}</div>
+                </div>
+
+                <ul>
+                    <li class="mail">{{fav.email}}</li>
+                    <li>{{fav.phoneNumber}}</li>
+                </ul>
+
+                <div class="buttons">
+                    <div (click)="mailFriend()">
+                        <i class="bi bi-chat-fill "></i>
+                        <button >Send message</button>
+                    </div>
+                    <div (click)="callFriend()">
+                        <i class="bi bi-telephone-fill "></i>
+                        <button>Call</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

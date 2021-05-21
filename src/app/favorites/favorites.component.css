@@ -1,0 +1,64 @@
+
+h2{
+  color: rgb(51, 66, 196);
+}
+
+.container-fluid{
+  padding-top: 2%;
+}
+
+ .favos{
+    display: inline-flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content:space-evenly;
+  }
+
+  .personFavs{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 10%;
+  }
+
+  
+ img{
+    width: 100px;
+    height: 100px;
+    border-radius: 25% 25%;
+  }
+
+  .card{
+    display: inline-flex;
+    justify-content: space-around;
+    padding:3%;
+    box-shadow: 5px 5px 10px #8f8f8f;
+    border-radius: 10%;
+  }
+
+  
+  .mail{
+    font-size: 85%;
+  }
+  .favName{
+    justify-self: center;
+    align-self: center;
+  }
+
+  li{
+    list-style: none;
+    padding: 2% 0;
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  button{
+    border: none;
+    background: none;
+  }
+
+  .bi{
+    font-size: 1rem;
+  } 

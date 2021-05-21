@@ -1,18 +1,50 @@
-*{
-  
-}
-table{
-  width: 75%;
-  margin: 0 auto
+
+h2{
+  color: rgb(51, 66, 196);
 }
 
-img {
-    width: 100px;
-    height: 100px;
+.btn-lg{
+  width: 35%;
+}
+
+.imgMain {
+    width: 75px;
+    height: 75px;
     border-radius: 25% 25%;
   }
 
-  .contacts{
-    width:100vw;
-    text-align: left;
+
+  .icon{
+    font-size:1.5rem;
+    display:flex;
+    justify-content: center;
+    
   }
+
+
+td{
+  vertical-align: middle ;
+}
+
+.form-controle{
+  height: 100%;
+  padding: 5% 5% 10% 5%;
+}
+
+.navbar-expand-lg button,.input-group{
+  box-shadow: 5px 5px 10px #8f8f8f;
+}
+
+.navbar-expand-lg{
+  margin: 2% 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.col{
+  padding-top: 2%;
+}
+
+.filled{
+  color: #F4B400;
+}
