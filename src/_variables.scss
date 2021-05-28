@@ -1,10 +1,11 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;300;400&display=swap');
 
 /********************* variables *********************/
 /* colors */
-$accent-color: #5962c0;
+$accent-color: #2531B6;
+$dark-blue: #1E2BA1;
 $side-color:  #ef9fb7;
 $black: #202020;
 $white: #ffffff;
@@ -18,7 +19,7 @@ $border: 1px solid $accent-color;
 $contact-image-size: 60px;
 $button-size: calc(60px / 2);
 $button-size-l: 60px;
-$nav-width: 60px;
+$nav-width: 70px;
 $fave-card-height: 128px;
 
 /* fonts */
