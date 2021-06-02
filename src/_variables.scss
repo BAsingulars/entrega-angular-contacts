@@ -26,7 +26,7 @@ $fave-card-height: 16rem;
 $helvetica: Helvetica, sans-serif;
 $font: 'Quicksand', sans-serif;
 
-/** mixins **/
+/********************* mixins *********************/
 // breakpoints (mobile-first)
 @mixin breakpoint($point) {
     @if $point == 'desktop-xxl' {

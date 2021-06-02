@@ -1,4 +1,4 @@
-@use "../../variables" as *;
+@use "src/variables" as *;
 
 .round-img {
     @include size($contact-image-size, $contact-image-size);

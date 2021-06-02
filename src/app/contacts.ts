@@ -1,4 +1,11 @@
-const contacts: Object[] = [
+interface Contact {
+  name: String;
+  email: String;
+  phoneNumber: String;
+  image: String ;
+}
+
+export const contacts: Contact[] = [
   {
     name: "Shakira Robel",
     email: "Ashley_Ritchie@hotmail.com",
