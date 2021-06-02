@@ -27,7 +27,7 @@ export class ContactListComponent implements OnInit {
 
   ngOnInit() {
     this.contacts = contactList;
-    this.favorites = contactList;
+    this.favorites = [];
 
     console.log(`favorites arr: ${this.favorites.length}`);
   }
@@ -43,12 +43,9 @@ export class ContactListComponent implements OnInit {
   }
 
   addFavorite(contact:Contact) {
-    //if favorite doesn't exist:
     const newFavorite = { ...contact};
-    this.favorites.push(newFavorite);
-
-    //if favorite exists already:
-    // this.favorites = this.favorites.filter(f => f!== contact);
+    //if favorite includes the contact we just added:
+    this.favorites.includes(contact)? this.favorites = this.favorites.filter(f => f!== contact) : this.favorites.push(newFavorite); 
   }
 
   handleClear() {

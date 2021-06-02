@@ -1,46 +1,82 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;300;400&display=swap');
 
 /********************* variables *********************/
 /* colors */
 $accent-color: #2531B6;
 $dark-blue: #1E2BA1;
 $side-color:  #ef9fb7;
+$light-steel-blue: #AFBED2;
 $black: #202020;
 $white: #ffffff;
 $light-gray: #ddd;
 $bg-color: #f3f4fb;
 $bg-main: #f8fafb;
 
-/* utlities */
-$box-shadow: 0 5px 10px $light-gray;
+/* utilities */
+$box-shadow: 0 .5rem 1rem $light-gray;
 $border: 1px solid $accent-color;
-$contact-image-size: 60px;
-$button-size: calc(60px / 2);
-$button-size-l: 60px;
-$nav-width: 70px;
-$fave-card-height: 128px;
+$contact-image-size: 6rem;
+$button-size: calc(6rem / 2);
+$button-size-l: 6rem;
+$nav-width: 7rem;
+$fave-card-height: 16rem;
 
 /* fonts */
 $helvetica: Helvetica, sans-serif;
 $font: 'Quicksand', sans-serif;
-$spartan: 'Spartan', sans-serif;
-$quicksand: 'Quicksand', sans-serif;
 
-@mixin grid-center {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    justify-content: center;
+/** mixins **/
+// breakpoints (mobile-first)
+@mixin breakpoint($point) {
+    @if $point == 'desktop-xxl' {
+       /* XX-Large devices (larger desktops, 1400px and up) */
+       @media (min-width: 1400px) { @content ; }
+   }
+   @else if $point == 'desktop-xl' {
+        /* X-Large devices (large desktops, 1200px and up) */
+        @media (min-width: 1200px) { @content ; }
+    }
+    @else if $point == 'desktop' {
+        /* Large devices (desktops, 990px and up) */
+        @media (min-width: 990px) { @content ; }
+   }
+     @else if $point == 'tablet' {
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) { @content ; }
+   }
+    @else if $point == 'mobile' {
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) { @content ; }
+   }
+   @else if $point == 'mobileonly' {
+        /* Small devices (small phones, 320px and up) */
+        //seriously who uses a phone smaller than this in 2021
+        @media (min-width: 320px) { @content ; }
+   }
 }
 
-@mixin flex-center($direction) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+//grid with same column/row size
+@mixin grid-size ($columnNumber, $columnSize, $rowNumber, $rowSize,  $gridGap) {
+    display: grid;
+    grid-template-columns: repeat($columnNumber, $columnSize);
+    grid-template-rows: repeat($rowNumber, $rowSize);
+    grid-gap: $gridGap;
+}
 
-    flex-direction: $direction;
+//grid with different values
+@mixin grid ($gridGap) {
+    display: grid;
+    grid-gap: $gridGap;
+}
+
+//flex centered
+@mixin flex($direction, $wrap, $justifyItems, $justifyContent, $alignItems) {
+    display: flex;
+    flex-flow: $direction $wrap;
+    justify-items: $justifyItems;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
 }
 
 @mixin accent-color($color, $negative:false) {
@@ -58,6 +94,16 @@ $quicksand: 'Quicksand', sans-serif;
     &:hover{
         $color: rgba($color, .25);
         //soy un putisimo genio ^
-        box-shadow: 0 20px 15px $color;
+        box-shadow: 0 2rem 1.5rem $color;
     }
+}
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin scroll($y, $x){
+    overflow-y: $y;
+    overflow-x: $x;
 }

@@ -1,39 +1,36 @@
-@use "./variables" as v;
+@use "./variables" as *;
 
 * { box-sizing: border-box; }
-html { font-size: 16px; }
+html { font-size: 10px; }
 
 body {
-  font-family: v.$font;
-  font-size: 1rem;
+  font-family: $font;
+  font-size: 1.6rem;
   font-weight: 300;
-  background-color: v.$bg-main;
+  background-color: $bg-main;
 }
 
 main { 
   margin: 0 auto;
 
-  display: grid;
-  grid-template-columns: v.$nav-width 125px 84vw;
+  @include grid(1rem 1.5rem);
+  grid-template-columns: $nav-width 12.5rem 84vw;
   grid-template-rows: auto auto;
-  grid-gap: 10px 15px;
   
   section { 
     grid-row: 1 / 2; grid-column: 2 / 4;
 
     input {
-      font-family: v.$font;
-      color: v.$accent-color;
+      font-family: $font;
+      color: $accent-color;
 
-      width: 128px;
-      padding: 13px 24px;
+      width: 12.8rem;
+      padding: 1.3rem 2.4rem;
       border: none;
       outline: none;
-      border-radius: 9px;
+      border-radius: .9rem;
 
-      ::placeholder {
-        content:url('./assets/svg/AtoZ_icon.svg');
-      }
+      ::placeholder { content:url('./assets/svg/AtoZ_icon.svg'); }
     }
   }
 
@@ -46,33 +43,32 @@ main {
 }
 
 .sorting-bar {
-  display: grid;
-  grid-template-rows: 215px 120px 350px;
-  grid-template-columns: 50px 74px;
-  background-color: v.$dark-blue;
-  color: v.$white;
+  @include grid(0);
+  grid-template-rows: 21.5rem 12rem 35rem;
+  grid-template-columns: 5rem 7.4rem;
+  background-color: $dark-blue;
+  color: $white;
 
-  // padding: 30px 0 30px 17px;
-  border-radius: 27px;
+  border-radius: 2.7rem;
   overflow: hidden;
 
   button {
-    font-family: v.$font;
-    color: v.$white;
+    font-family: $font;
+    color: $white;
 
-    padding: 5px;
+    padding: .5rem;
     background: none;
   }
 
   div {
     svg {
-      margin: 0 0 9px 5px;
+      margin: 0 0 .9rem .5rem;
       path { fill: #C1C7F7; }
     }
   }
 
   .alphabetical, .corner, .letters {
-    background: v.$accent-color;
+    background: $accent-color;
   }
 
   .corner {
@@ -80,19 +76,19 @@ main {
   }
 
   .alphabetical, .date {
-    padding: 30px 15px;
+    padding: 3rem 1.5rem;
     cursor: pointer;
   }
 
   .alphabetical { 
     grid-row: 1 / 2; grid-column: 1 / 2;
-    border-radius: 27px 0 0 27px;
+    border-radius: 2.7rem 0 0 2.7rem;
   }
 
   .date { 
     grid-row: 2 / 3; grid-column: 1 / 2; 
-    border-radius: 0 27px 0 0;
-    background: v.$dark-blue;
+    border-radius: 0 2.7rem 0 0;
+    background: $dark-blue;
   }
 
   .letters { 
@@ -101,17 +97,17 @@ main {
 
     overflow-y: auto;
     text-align: center;
-    padding: 0 21px;
+    padding: 0 2.1rem;
   }
 
   .letter {
-    padding: 9px;
-    border: 2px solid v.$accent-color;
+    padding: .9rem;
+    border: .2rem solid $accent-color;
 
     &:hover {
       background: none;
-      border: 2px solid v.$side-color;
-      border-radius: 9px;
+      border: .2rem solid $side-color;
+      border-radius: .9rem;
     }
   }
 
@@ -123,97 +119,97 @@ main {
 }
 
 nav {
-  width: v.$nav-width;
-  height: 100%;
+  @include size($nav-width, 100%);
   border-radius: 2.5rem 0 0 2.5rem;
-  background: v.$white;
+  background: $white;
   grid-row: 1 / 3; grid-column: 1 / 4;
 
-  @include v.flex-center(column);
-
-  a { margin: 25px; }
+  a { 
+    line-height: 4.2rem;
+    margin: 2.5rem;
+    @include size(3.9rem, 3.9rem);
+    text-align: center;
+  
+    &.active {
+      box-shadow: $box-shadow;
+      border-radius: .5rem;
+    }
+  }
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
+h1 { font-size: 3.6rem; }
+h2 { font-size: 2.8rem; }
+h3 { font-size: 2rem; }
 
 h1, h2, h3 { 
-  color: v.$accent-color;
-  line-height: 1rem;
+  color: $accent-color;
+  line-height: 1;
   font-weight: 600;
 }
 
 a {
-  color: v.$accent-color;
+  color: $accent-color;
   text-decoration: none;
 
-  &:hover {
-    color: v.$side-color;
-  }
+  &:hover { color: $side-color; }
 }
 
-button {
-  border: none;
-  margin: 5px;
-  padding: 5px;
+.uppercase { text-transform: uppercase; }
+.bold { font-weight: 600; }
+.light-steel-blue { color: $light-steel-blue; }
 
-  &:active {
-    color: v.$side-color;
-  }
+button {
+  font-family: $font;
+  border: none;
+  margin: .5rem;
+  padding: .5rem;
+  cursor: pointer;
+
+  &:active { color: $side-color; }
 }
 
 .button-top {
   text-transform: uppercase;
-  font-family: v.$font;
   font-weight: 600;
-  font-size: .7rem;
-  padding: 5px 15px;
-  min-width: calc(116px / 2);
-  max-width: 150px;
+  font-size: 1.2rem;
+  padding: .5rem 1.5rem;
+  min-width: calc(11.6rem / 2);
+  max-width: 15rem;
 
-  border-radius: 12px;
-  height: 35px;
+  border-radius: 1.2rem;
+  height: 3.5rem;
 }
 
 .button-round {
-  border-radius: 25px;
-  width: v.$button-size;
-  height: v.$button-size;
+  border-radius: 2.5rem;
+  @include size($button-size, $button-size);
 }
 
 .accent-bg {
-  @include v.accent-color(v.$accent-color, $negative: false);
-  &.hover { @include v.hover-color(v.$accent-color); }
+  @include accent-color($accent-color, $negative: false);
+  &.hover { @include hover-color($accent-color); }
 }
 
 .accent-bg-negative {
-  @include v.accent-color(v.$accent-color, $negative: true);
-  &.hover { @include v.hover-color(v.$light-gray); }
+  @include accent-color($accent-color, $negative: true);
+  &.hover { @include hover-color($light-gray); }
 }
 
 .side-bg {
-  @include v.accent-color(v.$side-color, $negative: false);
-  &.hover { @include v.hover-color(v.$side-color); }
+  @include accent-color($side-color, $negative: false);
+  &.hover { @include hover-color($side-color); }
 }
 
 .flex {
-  display: flex;
-  justify-content: space-between;
+  &.column { @include flex(column, nowrap, center, center, center); }
+  &.row { @include flex(row, nowrap, center, center, center); }
+
+  &.space-between { @include flex(row, nowrap, center, space-between, center); }
+  &.space-around { @include flex(row, nowrap, center, space-around, center); }
+  &.space-evenly { @include flex(row, nowrap, center, space-evenly, center); }
 }
 
-/****** media queries (mobile first) ******/
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) { }
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { }
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { }
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { }
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) { }
+.fave-button {
+  background: $bg-main;
+  color: $light-steel-blue;
+}
