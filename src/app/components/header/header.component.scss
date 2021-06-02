@@ -1,8 +1,10 @@
 @use "src/variables" as *;
 
 nav {
+  /* position in parent grid */
   grid-row: 1 / 3;
   grid-column: 1 / 2;
+
   @include size($nav-width, 98vh);
   border-radius: 2.5rem 0 0 2.5rem;
   background: $white;
@@ -21,27 +23,28 @@ nav {
 }
 
 section {
+  /* position in parent grid */
   grid-row: 1 / 2;
-  grid-column: 2 / 4;
+  grid-column: 2 / 4;  
+}
+
+#search-bar {
+  background: $white;
+  border-radius: 0.9rem;
+  @include flex(row, nowrap, center, center, center);
+  padding: 1.5rem;
+
 
   input {
     color: $accent-color;
-
-    width: 12.8rem;
-    padding: 1.3rem 2.4rem;
-    border: none;
+    background: none;
     outline: none;
-    border-radius: 0.9rem;
-
-    &::before {
-      content: url("../../../assets/svg/lupa_blue.svg");
-    }
+    border: none;
+    margin-left: 1rem;
 
     &::placeholder {
       color: $black;
     }
-
-    
   }
 }
 
@@ -58,8 +61,10 @@ section {
 }
 
 #sorting-bar {
+  /* position in parent grid */
   grid-row: 2 / 3;
   grid-column: 2 / 3;
+
   @include grid(0);
   grid-template-rows: 21.5rem 48.5rem;
   grid-template-columns: 5rem 7.4rem;
@@ -68,7 +73,7 @@ section {
 
   border-radius: 2.7rem;
   overflow: hidden;
-  width: calc(5rem + 7.4rem);
+  @include size(12.8rem, 70rem);
 
   button {
     font-family: $font;
