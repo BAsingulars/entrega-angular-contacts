@@ -1,4 +1,19 @@
-# Singulars Contacts
+# Contacts
+
+## https://yumyum0035.github.io/entrega-angular-contacts/
+
+![Screenshot#1](https://api-da.wixmp.com/_api/download/file?downloadToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImV4cCI6MTYyMjczOTIyNSwiaWF0IjoxNjIyNzE3NjE1LCJqdGkiOiI2MGI4YjRiOTZiZTczIiwib2JqIjpudWxsLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdLCJwYXlsb2FkIjp7InBhdGgiOiJcL2ZcL2IxMGFmNjMxLTBmNTktNGNmZi05MjcyLTVkODZjY2VjMGUzOVwvZGVrdHRveC05YjZjM2I1YS0zOTU2LTRmYmItOWMwNy0yN2FhMjYzYjdhNDcucG5nIn19.DDdlPiMAWeT9xA_Oet3O0IBPTHDS2vGmvDK9d-S2_Ig)
+
+![Screenshot#2](https://api-da.wixmp.com/_api/download/file?downloadToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImV4cCI6MTYyMjczOTI1NSwiaWF0IjoxNjIyNzE3NjQ1LCJqdGkiOiI2MGI4YjRkNzg3MWQ3Iiwib2JqIjpudWxsLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdLCJwYXlsb2FkIjp7InBhdGgiOiJcL2ZcL2IxMGFmNjMxLTBmNTktNGNmZi05MjcyLTVkODZjY2VjMGUzOVwvZGVrdHRvdC0zM2IyZjUzYS04ODZlLTRmYjEtYTc4Mi04ZGMyZDY5NmNiNjUucG5nIn19.MzptXA7llPFCwuslgp0KfHkFSvZTs6v_XQxUSuwb8Ng)
+
+## Used
+
+* Figma
+* Angular 11
+* SCSS
+* Gh-pages
+
+# Explicación: Singulars Contacts
 
 ## Introducción
 
@@ -80,4 +95,3 @@ Para facilitarte el trabajo de maquetación, se ha instalado bootstrap en este r
 Tip: puedes crear un nuevo listado de contactos favoritos, y un buscador por orden alfabético, para enriquecer la interficie:
 
 ![Singulars logo](https://cdn.dribbble.com/users/965389/screenshots/10605728/media/952fd347fcdbcf6821df11d6b0999868.png)
-
