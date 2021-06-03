@@ -2,15 +2,6 @@ import { Injectable } from '@angular/core';
 import contacts from '../contacts';
 import { Contact } from '../contacts';
 
-// [
-//   {
-//     name: 'Yuumi',
-//     email: 'yuumizilla@gmail.com',
-//     phoneNumber: '(+34) 647 345 015',
-//     image: "https://avatars.githubusercontent.com/u/69478059?v=4"
-//   }
-// ];
-
 @Injectable({
   providedIn: 'root'
 })
@@ -18,6 +9,7 @@ import { Contact } from '../contacts';
 export class ContactsService {
 
   contactList: Contact[];
+  favoriteList: Contact[];
 
   constructor() { }
   
@@ -25,6 +17,19 @@ export class ContactsService {
   getContacts() {
     this.contactList = contacts;
     return this.contactList;
+  }
+
+  getFavorites() {
+    this.favoriteList = [
+        {
+          name: 'Yuumi',
+          email: 'yuumizilla@gmail.com',
+          phoneNumber: '(+34) *** *** 015',
+          image: "https://avatars.githubusercontent.com/u/69478059?v=4"
+        }
+    ];
+
+    return this.favoriteList;
   }
 
   addContact(contact:Contact) {

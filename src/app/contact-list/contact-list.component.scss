@@ -110,12 +110,12 @@
     background: none;
 
     &.call::before {
-        content: url("../../assets/svg/call_icon.svg");
+        content: url("/assets/svg/call_icon.svg");
         margin-right: .5rem;
     }
     
     &.message::before {
-        content: url("../../assets/svg/message_icon.svg");
+        content: url("/assets/svg/message_icon.svg");
         margin-right: .5rem;
     }  
 }

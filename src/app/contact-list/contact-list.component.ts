@@ -14,7 +14,7 @@ export class ContactListComponent implements OnInit {
 
   ngOnInit() {
     this.contacts = this.contactService.getContacts();
-    this.favorites = [];
+    this.favorites = this.contactService.getFavorites();
   }
 
   delete(contact:Contact) { 
