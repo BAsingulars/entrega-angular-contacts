@@ -1,29 +1,24 @@
-/********************* variables *********************/
-/* colors */
-$accent-color: #efa0b8;
-$side-color: #2531b6;
-$black: #202020;
-$light-gray: #ddd;
+@use "./variables" as *;
 
-/* utlities */
-$box-shadow: 0 5px 10px $light-gray;
-$border: 1px solid $accent-color;
-$contact-image-size: 90px;
-
-/* fonts */
-$helvetica: Helvetica, sans-serif;
-
-
-* {  box-sizing: border-box; }
-html { font-size: 16px; }
+* { box-sizing: border-box; }
+html { font-size: 10px; }
 
 body {
-  font-family: $helvetica;
-  font-size: 1rem;
+  font-family: $font;
+  font-size: 1.6rem;
+  font-weight: 300;
+  background-color: $bg-main;
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2rem; }
+h1 { font-size: 3.6rem; }
+h2 { font-size: 2.8rem; }
+h3 { font-size: 2rem; }
+
+h1, h2, h3 { 
+  color: $accent-color;
+  line-height: 1;
+  font-weight: 600;
+}
 
 a {
   color: $accent-color;
@@ -32,41 +27,84 @@ a {
   &:hover { color: $side-color; }
 }
 
-.contact-card {
-    display: grid;
-    grid-template-columns: 128px auto;
-    grid-template-rows: auto;
+.uppercase { text-transform: uppercase; }
+.bold { font-weight: 600; }
+.light-steel-blue { color: $light-steel-blue; }
 
+button {
+  font-family: $font;
+  border: none;
+  margin: .5rem;
+  padding: .5rem;
+  cursor: pointer;
 
-    img {
-        width: $contact-image-size;
-        height: $contact-image-size;
-        object-fit: cover;
-        border-radius: 50px;
-
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-    }
-
-    section {
-        grid-column: 2 / 3;
-        grid-row: 1 / 2;
-    }
-
+  &:active { color: $side-color; }
 }
 
-/****** media queries (mobile first) ******/
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) { }
+input { 
+  font-family: $font;
+  border: none;
+  outline: none;
+}
 
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { }
+.button-round {
+  border-radius: 2.5rem;
+  @include size($button-size, $button-size);
+}
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { }
+.button-round-corner { 
+  padding: 1rem;
+  border-radius: .5rem;
+}
 
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { }
+.accent-bg {
+  @include accent-color($accent-color, $negative: false);
+  &.hover { @include hover-color($accent-color); }
+}
 
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) { }
+.accent-bg-negative {
+  @include accent-color($accent-color, $negative: true);
+  &.hover { @include hover-color($light-gray); }
+}
+
+.side-bg {
+  @include accent-color($side-color, $negative: false);
+  &.hover { @include hover-color($side-color); }
+}
+
+.flex {
+  &.column { @include flex(column, nowrap, center, center, center); }
+  &.row { @include flex(row, nowrap, center, center, center); }
+
+  &.space-between { @include flex(row, nowrap, center, space-between, center); }
+  &.space-around { @include flex(row, nowrap, center, space-around, center); }
+  &.space-evenly { @include flex(row, nowrap, center, space-evenly, center); }
+}
+
+.fave-button {
+  background: $bg-main;
+  color: $light-steel-blue;
+}
+
+app-root, app-header {
+  @include grid(1rem 1.5rem);
+  grid-template-columns: $nav-width 75vw;
+  grid-template-rows: 5rem auto;
+}
+
+app-header { grid-row: 1 / 2; }
+
+app-contact-list {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+@include breakpoint('desktop') {
+  app-header, app-root {
+    grid-template-columns: $nav-width 12.5rem 78vw; 
+  }
+
+  app-contact-list {
+    grid-column: 3 / 4;
+  } 
+}
