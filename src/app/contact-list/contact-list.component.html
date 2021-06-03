@@ -1,27 +1,38 @@
-<article class="contact-card" *ngFor="let contact of contacts">
-  <section>
-    <p>{{ contact.name }}</p>
-    <p>{{ contact.phoneNumber }}</p>
-    <p>{{ contact.email }}</p>
+<div *ngIf="favorites.length != 0">
+  <h3>Favorite</h3>
+  <div class="contact faves">
+    <article class="favorite-card" *ngFor="let favorite of favorites">
+      <img class="round-img" src="{{ favorite.image }}" alt="" />
+      <h3>{{ favorite.name }}</h3>
+      <button class="fave-button side-bg button-round" (click)="addFavorite(favorite)"><i class="fas fa-star"></i></button>
+      <div>
+        <p class="line-clamp">{{ favorite.email }}</p>
+        <p>{{ favorite.phoneNumber }}</p>
+      </div>
+    </article>      
+  </div>
+</div>
+
+<h3>Contact List</h3>
+<div class="contact list">
+  <section class="light-steel-blue uppercase bold grid">
+    <p> </p>
+    <p class="name">name</p>
+    <p class="email">email</p>
+    <p class="phone">phone</p>
+    <p class="actions">actions</p>
+    <p>others</p>
   </section>
 
-  <img src="{{ contact.image }}" alt="{{ contact.name }}" />
-</article>
-
-<!-- <div>
-    <label for="contact-name"></label>
-    <input type="text" [(ngModel)]="newContact.name">
+  <article class="grid contact-item" *ngFor="let contact of contacts">
+    <img class="round-img" src="{{ contact.image }}" alt="" />
+    <h3 class="name">{{ contact.name }}</h3>
+    <p class="email">{{ contact.email }}</p>
+    <p class="phone line-clamp">{{ contact.phoneNumber }}</p>
+    <p class="actions"><button class="action-buttons message bold">Send message</button> <button class="action-buttons bold call">Call</button></p>
+    <div class="buttons">
+      <button (click)="addFavorite(contact)" class="fave-button accent-bg button-round" title="favorite contact"><i class="far fa-star"></i></button>
+      <button class="fave-button accent-bg button-round" title="delete contact" (click)="delete(contact)"> ✕ </button>
+    </div>
+  </article>      
 </div>
-<div>
-    <label for="contact-email"></label>
-    <input type="text" [(ngModel)]="newContact.email">
-</div>
-<div>
-    <label for="contact-phone"></label>
-    <input type="text" [(ngModel)]="newContact.phoneNumber">
-</div>
-<div>
-    <label for="contact-image"></label>
-    <input type="text" [(ngModel)]="newContact.image">
-</div>
-<button (click)="addContact">Submit New Contact</button> -->

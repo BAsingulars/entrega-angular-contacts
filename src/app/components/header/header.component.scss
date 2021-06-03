@@ -1,0 +1,211 @@
+@use "src/variables" as *;
+
+nav {
+  /* position in parent grid */
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
+
+  @include size($nav-width, 98vh);
+  border-radius: 2.5rem 0 0 2.5rem;
+  background: $white;
+
+  a {
+    line-height: 4.2rem;
+    margin: 2.5rem;
+    @include size(3.9rem, 3.9rem);
+    text-align: center;
+
+    &.active {
+      box-shadow: $box-shadow;
+      border-radius: 0.5rem;
+    }
+  }
+}
+
+section {
+  /* position in parent grid */
+  grid-row: 1 / 2;
+  grid-column: 2 / 4;  
+}
+
+#search-bar {
+  background: $white;
+  border-radius: 0.9rem;
+  @include flex(row, nowrap, center, center, center);
+  padding: 1.5rem 0 1.5rem 1.5rem;
+
+
+  input {
+    color: $accent-color;
+    background: none;
+    margin-left: 1rem;
+
+    &::placeholder {
+      color: $black;
+    }
+  }
+}
+
+.button-top {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+  min-width: calc(11.6rem / 2);
+  max-width: 15rem;
+
+  border-radius: 1.2rem;
+  height: 3.5rem;
+}
+
+#sorting-bar {
+  background-color: $dark-blue;
+  color: $white;
+
+  /* hide it on mobile!! */
+  display: none;
+
+  border-radius: 2.7rem;
+  overflow: hidden;
+  @include size(12.8rem, 70rem);
+
+  button {
+    font-family: $font;
+    color: $white;
+
+    padding: 0.5rem;
+    background: none;
+  }
+
+  div {
+    svg {
+      margin: 0 0 0.9rem 0.5rem;
+      path {
+        fill: #c1c7f7;
+      }
+    }
+  }
+
+  .alphabetical,
+  .corner,
+  .letters {
+    background: $accent-color;
+  }
+
+  .corner {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+
+  .alphabetical,
+  .date {
+    padding: 3rem 1.5rem;
+    cursor: pointer;
+  }
+
+  .alphabetical {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    border-radius: 2.7rem 0 0 2.7rem;
+  }
+
+  .date {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    border-radius: 0 2.7rem 0 0;
+    background: $dark-blue;
+  }
+
+  .letters {
+    grid-row: 1 / 3;
+    grid-column: 2 / 3;
+
+    overflow-y: auto;
+    text-align: center;
+    padding: 0 2.1rem;
+  }
+
+  .letter {
+    padding: 0.9rem;
+    border: 0.2rem solid $accent-color;
+
+    &:hover {
+      background: none;
+      border: 0.2rem solid $side-color;
+      border-radius: 0.9rem;
+    }
+  }
+
+  .vertical {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+  }
+}
+
+form {
+  @include flex(column, nowrap, flex-start, space-evenly, flex-start);
+  width: 40rem;
+  background: $white;
+  padding: 2.5rem 5rem;
+  border-radius: 1rem;
+
+  position: fixed;
+  top: 10vh;
+  left: calc(50% - 20rem); /* 50% - half of the form size */
+
+  label {
+    font-weight: 600;
+    color: $accent-color;
+  }
+
+  input { width: 100%; }
+
+  button { 
+    align-self: center;
+    margin: 2rem;
+  }
+}
+
+.button-close {
+  @include size(5rem, 5rem);
+  font-size: 2.5rem;
+  border-radius: 2.5rem;
+  background: #ddd;
+  position: absolute;
+  top: 0;
+  right: 0;
+  outline: none;
+  vertical-align: middle;
+
+  &:active {
+    background: $side-color;
+    color: $white;
+  }
+}
+
+#modal {
+  background: rgba($black, .5);
+  @include size(100vw, 100vh);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.buttons { display: none; }
+
+@include breakpoint("tablet") {
+  .buttons { display: block; }
+}
+
+@include breakpoint('desktop') {
+  #sorting-bar {
+    /* position in parent grid */
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  
+    @include grid(0);
+    grid-template-rows: 21.5rem 48.5rem;
+    grid-template-columns: 5rem 7.4rem;
+  }
+}
