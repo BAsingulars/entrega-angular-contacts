@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactsService } from '../services/contacts.service';
-
-interface Contact {
-  name: String;
-  email: String;
-  phoneNumber: String;
-  image: String ;
-}
+import { Contact } from '../contacts';
 @Component({
   selector: 'app-contact-list',
   templateUrl: './contact-list.component.html',
@@ -15,33 +9,12 @@ interface Contact {
 export class ContactListComponent implements OnInit {
   contacts: Object[];
   favorites: Object[];
-  newContact: Contact = {
-    name: "",
-    email: "",
-    phoneNumber: "",
-    image: ""
-  };
-
+  
   constructor(private contactService: ContactsService) { }
 
   ngOnInit() {
     this.contacts = this.contactService.getContacts();
     this.favorites = [];
-  }
-
-  addContact(contact:Contact){
-    // add contact to contacts list
-    this.contactService.addContact(contact);
-
-    // clear inputs
-    this.handleClear();
-  }
-
-  handleClear() {
-    this.newContact.name = "";
-    this.newContact.email = "";
-    this.newContact.phoneNumber = "";
-    this.newContact.image = "";
   }
 
   delete(contact:Contact) { 

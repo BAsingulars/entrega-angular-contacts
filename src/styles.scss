@@ -41,11 +41,20 @@ button {
   &:active { color: $side-color; }
 }
 
-input { font-family: $font; }
+input { 
+  font-family: $font;
+  border: none;
+  outline: none;
+}
 
 .button-round {
   border-radius: 2.5rem;
   @include size($button-size, $button-size);
+}
+
+.button-round-corner { 
+  padding: 1rem;
+  border-radius: .5rem;
 }
 
 .accent-bg {
@@ -77,22 +86,25 @@ input { font-family: $font; }
   color: $light-steel-blue;
 }
 
-app-root {
+app-root, app-header {
   @include grid(1rem 1.5rem);
-  grid-template-columns: $nav-width 12.5rem 84vw;
-  grid-template-rows: 6.2rem auto;
+  grid-template-columns: $nav-width 75vw;
+  grid-template-rows: 5rem auto;
 }
 
-app-header {
-  grid-row: 1 / 2; 
-
-  @include grid(1rem 1.5rem);
-  grid-template-columns: $nav-width 12.5rem 84vw;
-  grid-template-rows: auto auto;
-}
+app-header { grid-row: 1 / 2; }
 
 app-contact-list {
   grid-row: 2 / 3;
-  grid-column: 3 / 4;
-  width: 100%;
+  grid-column: 2 / 3;
+}
+
+@include breakpoint('desktop') {
+  app-header, app-root {
+    grid-template-columns: $nav-width 12.5rem 78vw; 
+  }
+
+  app-contact-list {
+    grid-column: 3 / 4;
+  } 
 }

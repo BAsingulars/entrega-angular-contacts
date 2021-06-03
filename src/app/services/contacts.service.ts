@@ -1,12 +1,6 @@
 import { Injectable } from '@angular/core';
 import contacts from '../contacts';
-
-interface Contact {
-  name: String;
-  email: String;
-  phoneNumber: String;
-  image: String ;
-}
+import { Contact } from '../contacts';
 
 // [
 //   {

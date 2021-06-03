@@ -35,8 +35,6 @@
 }
 
 .contact {
-    width: 100%;
-
     h3 { 
         font-size: 1.6rem; 
         line-height: normal;
@@ -54,7 +52,7 @@
 
 .list { 
     @include scroll(scroll, hidden);
-    @include size(115rem, 43rem);
+    @include size(77vw, 43rem);
 }
 
 .faves {
@@ -74,19 +72,22 @@
 }
 
 .grid {
-    @include grid(0);
-    grid-template-columns: $contact-image-size 14rem 20rem 15rem 22rem 8rem;
+    @include grid(0 2.5rem);
+    grid-template-columns: $contact-image-size minmax(20vw, 38rem) 8rem;
     grid-template-rows: $contact-image-size;
-    justify-content: space-between;
+    justify-content: start;
+    justify-items: center;
     align-items: center;
 
     margin-bottom: 1rem;
-    .buttons {grid-row: 1 / 2; grid-column: 6 / 7; }
+    padding: .8rem;
+
+    .name { justify-self: start; } 
+    .email, .phone, .actions { display: none; }
 
     &.contact-item {
         border-radius: 2.8rem;
         background: none;
-        padding: .8rem;
 
         &:hover, &:active {
             background: rgba($side-color, 25%);
@@ -117,4 +118,25 @@
         content: url("../../assets/svg/message_icon.svg");
         margin-right: .5rem;
     }  
+}
+
+@include breakpoint('tablet') {
+    //contact-list gotta show email, phone and actions here
+    .grid {
+        grid-template-columns: $contact-image-size 14rem 20rem 15rem 8rem;
+        justify-content: space-between; 
+        .email, .phone { display: block; }
+    }
+}
+
+@include breakpoint('desktop-xl') {
+    .list { @include size(110rem, 43rem); }
+
+    //contact-list gotta show email, phone and actions here
+    .grid {
+        grid-template-columns: $contact-image-size 14rem 20rem 15rem 22rem 8rem;
+        justify-content: space-between; 
+
+        .email, .phone, .actions { display: block; }
+    }
 }

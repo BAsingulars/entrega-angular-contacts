@@ -2,21 +2,30 @@
   <a href="#"><img src="../assets/svg/nav_dashboard_icon.svg" alt="" /></a>
   <a href="#"><img src="../assets/svg/nav_filter_icon.svg" alt="" /></a>
   <a href="#"><img src="../assets/svg/nav_list_icon.svg" alt="" /></a>
-  <a class="active" href="#"><img src="../assets/svg/book_icon.svg" alt=""/></a>
+  <a class="active" href="#"
+    ><img src="../assets/svg/book_icon.svg" alt=""
+  /></a>
 </nav>
 
-<section id="addContact" class="flex row space-between">
+<section id="contact-buttons" class="flex row space-between">
   <div id="search-bar">
-     <img src="../../../assets/svg/lupa_blue.svg" alt=""> <input type="text" placeholder="Search" />
+    <img src="../../../assets/svg/lupa_blue.svg" alt="" />
+    <input type="text" placeholder="Search" />
   </div>
-  <div class="buttons">
-    <button class="side-bg hover button-top">add contact</button>
-    <button class="accent-bg-negative hover button-top">
-      <img src="../assets/svg/filter.svg" alt="" />
+
+  <div class="flex row">
+    <button id="addContact" (click)="openModal()" class="side-bg hover button-top">
+      add contact
     </button>
-    <button class="accent-bg hover button-top">
-      <img src="../assets/svg/lupa_white.svg" alt="" />
-    </button>
+  
+    <div class="buttons">
+      <button class="accent-bg-negative hover button-top">
+        <img src="../assets/svg/filter.svg" alt="" />
+      </button>
+      <button class="accent-bg hover button-top">
+        <img src="../assets/svg/lupa_white.svg" alt="" />
+      </button>
+    </div>
   </div>
 </section>
 
@@ -73,4 +82,27 @@
   <article class="letters">
     <p class="letter" *ngFor="let letter of alphabetList">{{ letter }}</p>
   </article>
+</div>
+
+<!-- add contact modal  -->
+<div id="modal" *ngIf="display">
+  <form>
+    <label for="contact-name"><p>Name</p></label>
+    <input id="contact-name" name="name" type="text" [(ngModel)]="newContact.name" placeholder="Jane Doe"/>
+
+    <label for="contact-email"><p>Email</p></label>
+    <input id="contact-email" name="email" type="email" [(ngModel)]="newContact.email" placeholder="e-mail@address.com"/>
+
+    <label for="contact-phone"><p>Phone number</p></label>
+    <input id="contact-phone" name="phone" type="phone" [(ngModel)]="newContact.phoneNumber" placeholder="123 456 789" />
+
+    <label for="contact-image"><p>Image file</p></label>
+    <input id="contact-image" name="image" type="text" [(ngModel)]="newContact.image" placeholder="image.png"/>
+
+    <button type="submit" (click)="addContact(newContact)"class="side-bg button-round-corner bold uppercase">
+      Submit New Contact
+    </button>
+
+    <button (click)="openModal()" class="button-close">&times;</button>
+  </form>
 </div>
