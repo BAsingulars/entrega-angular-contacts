@@ -1,6 +1,6 @@
 # Contacts
 
-## https://yumyum0035.github.io/entrega-angular-contacts/
+## [Link to demo](https://yumyum0035.github.io/entrega-angular-contacts/)
 
 ![Screenshot#1](https://github.com/yumyum0035/entrega-angular-contacts/blob/master/docs/assets/github%20screenshots/screenshot01.png?raw=true)
 
