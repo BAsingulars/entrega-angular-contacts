@@ -1,0 +1,158 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css);
+@import url(https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap);
+/********************* variables *********************/
+/* colors */
+/* utilities */
+/* fonts */
+/********************* mixins *********************/
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  background-color: #f8fafb;
+}
+h1 {
+  font-size: 3.6rem;
+}
+h2 {
+  font-size: 2.8rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h1, h2, h3 {
+  color: #2531B6;
+  line-height: 1;
+  font-weight: 600;
+}
+a {
+  color: #2531B6;
+  text-decoration: none;
+}
+a:hover {
+  color: #ef9fb7;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.bold {
+  font-weight: 600;
+}
+.light-steel-blue {
+  color: #AFBED2;
+}
+button {
+  font-family: "Quicksand", sans-serif;
+  border: none;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+button:active {
+  color: #ef9fb7;
+}
+input {
+  font-family: "Quicksand", sans-serif;
+  border: none;
+  outline: none;
+}
+.button-round {
+  border-radius: 2.5rem;
+  width: calc(6rem / 2);
+  height: calc(6rem / 2);
+}
+.button-round-corner {
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.accent-bg {
+  color: #ffffff;
+  background: #2531B6;
+}
+.accent-bg.hover:hover {
+  box-shadow: 0 2rem 1.5rem rgba(37, 49, 182, 0.25);
+}
+.accent-bg-negative {
+  color: #2531B6;
+  background: #ffffff;
+}
+.accent-bg-negative.hover:hover {
+  box-shadow: 0 2rem 1.5rem rgba(221, 221, 221, 0.25);
+}
+.side-bg {
+  color: #ffffff;
+  background: #ef9fb7;
+}
+.side-bg.hover:hover {
+  box-shadow: 0 2rem 1.5rem rgba(239, 159, 183, 0.25);
+}
+.flex.column {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+}
+.flex.row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+}
+.flex.space-between {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex.space-around {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-items: center;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex.space-evenly {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-items: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.fave-button {
+  background: #f8fafb;
+  color: #AFBED2;
+}
+app-root, app-header {
+  display: grid;
+  grid-gap: 1rem 1.5rem;
+  grid-template-columns: 7rem 75vw;
+  grid-template-rows: 5rem auto;
+}
+app-header {
+  grid-row: 1/2;
+}
+app-contact-list {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+/* Large devices (desktops, 990px and up) */
+@media (min-width: 990px) {
+  app-header, app-root {
+    grid-template-columns: 7rem 12.5rem 78vw;
+  }
+
+  app-contact-list {
+    grid-column: 3/4;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map*/

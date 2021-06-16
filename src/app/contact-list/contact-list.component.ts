@@ -1,30 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import contactList from '../contacts';
-
-interface Contact {
-    name: String;
-    email: String;
-    phoneNumber: String;
-    image: String ;
-}
-
+import { ContactsService } from '../services/contacts.service';
+import { Contact } from '../contacts';
 @Component({
   selector: 'app-contact-list',
   templateUrl: './contact-list.component.html',
-  styleUrls: ['./contact-list.component.css']
+  styleUrls: ['./contact-list.component.scss']
 })
 export class ContactListComponent implements OnInit {
   contacts: Object[];
-  newContact: Contact;
-
-  constructor() { }
+  favorites: Object[];
+  
+  constructor(private contactService: ContactsService) { }
 
   ngOnInit() {
-    this.contacts = contactList;
+    this.contacts = this.contactService.getContacts();
+    this.favorites = this.contactService.getFavorites();
   }
 
-  addContact(){
-    // add contact to contacts list
-    // clear inputs
+  delete(contact:Contact) { 
+    this.contacts = this.contacts.filter(c => c !== contact); 
   }
+
+  addFavorite(contact:Contact) {
+    const newFavorite = { ...contact};
+
+    //if favorite includes the contact we just added:
+    this.favorites.includes(contact)? this.favorites = this.favorites.filter(f => f!== contact) : this.favorites.push(newFavorite); 
+  }
+
 }

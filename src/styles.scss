@@ -1,1 +1,110 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./variables" as *;
+
+* { box-sizing: border-box; }
+html { font-size: 10px; }
+
+body {
+  font-family: $font;
+  font-size: 1.6rem;
+  font-weight: 300;
+  background-color: $bg-main;
+}
+
+h1 { font-size: 3.6rem; }
+h2 { font-size: 2.8rem; }
+h3 { font-size: 2rem; }
+
+h1, h2, h3 { 
+  color: $accent-color;
+  line-height: 1;
+  font-weight: 600;
+}
+
+a {
+  color: $accent-color;
+  text-decoration: none;
+
+  &:hover { color: $side-color; }
+}
+
+.uppercase { text-transform: uppercase; }
+.bold { font-weight: 600; }
+.light-steel-blue { color: $light-steel-blue; }
+
+button {
+  font-family: $font;
+  border: none;
+  margin: .5rem;
+  padding: .5rem;
+  cursor: pointer;
+
+  &:active { color: $side-color; }
+}
+
+input { 
+  font-family: $font;
+  border: none;
+  outline: none;
+}
+
+.button-round {
+  border-radius: 2.5rem;
+  @include size($button-size, $button-size);
+}
+
+.button-round-corner { 
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+.accent-bg {
+  @include accent-color($accent-color, $negative: false);
+  &.hover { @include hover-color($accent-color); }
+}
+
+.accent-bg-negative {
+  @include accent-color($accent-color, $negative: true);
+  &.hover { @include hover-color($light-gray); }
+}
+
+.side-bg {
+  @include accent-color($side-color, $negative: false);
+  &.hover { @include hover-color($side-color); }
+}
+
+.flex {
+  &.column { @include flex(column, nowrap, center, center, center); }
+  &.row { @include flex(row, nowrap, center, center, center); }
+
+  &.space-between { @include flex(row, nowrap, center, space-between, center); }
+  &.space-around { @include flex(row, nowrap, center, space-around, center); }
+  &.space-evenly { @include flex(row, nowrap, center, space-evenly, center); }
+}
+
+.fave-button {
+  background: $bg-main;
+  color: $light-steel-blue;
+}
+
+app-root, app-header {
+  @include grid(1rem 1.5rem);
+  grid-template-columns: $nav-width 75vw;
+  grid-template-rows: 5rem auto;
+}
+
+app-header { grid-row: 1 / 2; }
+
+app-contact-list {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+@include breakpoint('desktop') {
+  app-header, app-root {
+    grid-template-columns: $nav-width 12.5rem 78vw; 
+  }
+
+  app-contact-list {
+    grid-column: 3 / 4;
+  } 
+}

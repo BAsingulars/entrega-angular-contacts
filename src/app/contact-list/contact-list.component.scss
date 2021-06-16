@@ -1,0 +1,142 @@
+@use "src/variables" as *;
+
+.round-img {
+    @include size($contact-image-size, $contact-image-size);
+    object-fit: cover;
+    border-radius: 3rem;
+}
+
+.favorite-card {
+    @include grid(1rem);
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: $contact-image-size 15rem $button-size;
+    grid-template-rows: repeat(2, auto);
+
+    background: $white;
+    border-radius: 2.8rem;
+    box-shadow: $box-shadow;
+
+    padding: 1rem;
+    margin: 0 1rem;
+    height: 14rem;
+
+    grid-row: 1 / 2;
+
+    h3 { justify-self: start; }
+
+    div { 
+        grid-column: 1 / 4; 
+        grid-row: 2 / 3; 
+        border-top: .1rem dashed $light-steel-blue;
+        width: 100%;
+        padding: .5rem 1rem;
+    }
+}
+
+.contact {
+    h3 { 
+        font-size: 1.6rem; 
+        line-height: normal;
+        margin: .5rem 0; 
+    }
+
+    p { 
+        font-size: 1.2rem; 
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    section { grid-column: 2 / 3; }
+}
+
+.list { 
+    @include scroll(scroll, hidden);
+    @include size(77vw, 43rem);
+}
+
+.faves {
+    @include grid(0 1.5rem);
+    grid-template-columns: repeat(6, 30rem);
+    grid-template-rows: $fave-card-height;
+
+    height: $fave-card-height;
+    @include scroll(hidden, scroll);
+}
+
+.line-clamp {
+    line-clamp: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.grid {
+    @include grid(0 2.5rem);
+    grid-template-columns: $contact-image-size minmax(20vw, 38rem) 8rem;
+    grid-template-rows: $contact-image-size;
+    justify-content: start;
+    justify-items: center;
+    align-items: center;
+
+    margin-bottom: 1rem;
+    padding: .8rem;
+
+    .name { justify-self: start; } 
+    .email, .phone, .actions { display: none; }
+
+    &.contact-item {
+        border-radius: 2.8rem;
+        background: none;
+
+        &:hover, &:active {
+            background: rgba($side-color, 25%);
+
+            .action-buttons, .fave-button {
+                color: $accent-color;
+                background: $white;
+            }
+        }
+    }
+}
+
+.action-buttons {
+    min-width: 6.3rem;
+    border-radius: .4rem;
+    padding: 1.1rem;
+    vertical-align: middle;
+
+    color: $light-gray;
+    background: none;
+
+    &.call::before {
+        content: url("/assets/svg/call_icon.svg");
+        margin-right: .5rem;
+    }
+    
+    &.message::before {
+        content: url("/assets/svg/message_icon.svg");
+        margin-right: .5rem;
+    }  
+}
+
+@include breakpoint('tablet') {
+    //contact-list gotta show email, phone and actions here
+    .grid {
+        grid-template-columns: $contact-image-size 14rem 20rem 15rem 8rem;
+        justify-content: space-between; 
+        .email, .phone { display: block; }
+    }
+}
+
+@include breakpoint('desktop-xl') {
+    .list { @include size(110rem, 43rem); }
+
+    //contact-list gotta show email, phone and actions here
+    .grid {
+        grid-template-columns: $contact-image-size 14rem 20rem 15rem 22rem 8rem;
+        justify-content: space-between; 
+
+        .email, .phone, .actions { display: block; }
+    }
+}

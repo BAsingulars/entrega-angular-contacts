@@ -1,4 +1,19 @@
-# Singulars Contacts
+# Contacts
+
+## [Link to demo](https://yumyum0035.github.io/entrega-angular-contacts/)
+
+![Screenshot#1](https://github.com/yumyum0035/entrega-angular-contacts/blob/master/docs/assets/github%20screenshots/screenshot01.png?raw=true)
+
+![Screenshot#2](https://github.com/yumyum0035/entrega-angular-contacts/blob/master/docs/assets/github%20screenshots/screenshot02.png?raw=true)
+
+## Used
+
+* Figma
+* Angular 11
+* SCSS
+* Gh-pages
+
+# Explicación: Singulars Contacts
 
 ## Introducción
 
@@ -80,4 +95,3 @@ Para facilitarte el trabajo de maquetación, se ha instalado bootstrap en este r
 Tip: puedes crear un nuevo listado de contactos favoritos, y un buscador por orden alfabético, para enriquecer la interficie:
 
 ![Singulars logo](https://cdn.dribbble.com/users/965389/screenshots/10605728/media/952fd347fcdbcf6821df11d6b0999868.png)
-
